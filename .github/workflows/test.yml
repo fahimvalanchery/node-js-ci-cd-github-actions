@@ -52,8 +52,9 @@ jobs:
     runs-on: [self-hosted, linux, ARM64]
 
     steps:
+      - name: Check out
         uses: actions/checkout@v2
-      - run: |
+        script: |
             "echo hello"
 
 

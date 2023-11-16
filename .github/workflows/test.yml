@@ -62,10 +62,10 @@ jobs:
           username: ${{secrets.USERNAME}}
           password: ${{secrets.PASSWORD}}
           script: |
-          cd /usr/share/nodeproject/node-js-ci-cd-github-actions
-          git pull
-          npm install
-          npm start
+            cd /usr/share/nodeproject/node-js-ci-cd-github-actions
+            git pull
+            npm install
+            npm start
   
                 
 

@@ -56,6 +56,8 @@ jobs:
         uses: actions/checkout@v2
       - name: Remove 
         run: "rm -rf /usr/share/nodeproject/node-js-ci-cd-github-actions"
+      - name: Make 
+        run: "mkdir /usr/share/nodeproject/node-js-ci-cd-github-actions"
       - name: Move 
         run: "mv /var/www/html/actions-runner/_work/node-js-ci-cd-github-actions/node-js-ci-cd-github-actions/*  /usr/share/nodeproject/node-js-ci-cd-github-actions"
  

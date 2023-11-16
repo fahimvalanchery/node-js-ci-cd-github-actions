@@ -55,10 +55,6 @@ jobs:
     steps:
       - name: Install SSH Key
         uses: shimataro/ssh-key-action@v2
-        run: |
-          echo "Starting deployment..."
-          ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }} "cd /usr/share/nodeproject/node-js-ci-cd-github-actions/ && git pull origin main" 
-          echo "Deployment completed."
         with:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
@@ -71,8 +67,14 @@ jobs:
       #   run: rsync -avz ./src/ ${{ secrets.USERNAME }}@${{ secrets.HOST }}:/usr/share/nodeproject/node-js-ci-cd-github-actions/
 
       # 
-      # - name: Deploy to server
-      
+      - name: Deploy to server
+        with:
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
+        run: |
+          echo "Starting deployment..."
+          ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }} "cd /usr/share/nodeproject/node-js-ci-cd-github-actions/ && git pull origin main" 
+          echo "Deployment completed."
   
                 
 

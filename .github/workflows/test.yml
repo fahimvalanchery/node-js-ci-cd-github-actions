@@ -49,7 +49,7 @@ jobs:
   # Deploye
   deploy:
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, ARM64]
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -72,9 +72,6 @@ jobs:
           echo "Starting deployment..."
           "cd /usr/share/nodeproject/node-js-ci-cd-github-actions/ && git pull origin main" 
           echo "Deployment completed."
-        with:
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
   
                 
 

@@ -46,4 +46,27 @@ jobs:
       - name: Run Test
         run: npm test
   
+  # Deploye
+  deploy:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          host: ${{secrets.HOST}}
+          username: ${{secrets.USERNAME}}
+          password: ${{secrets.PASSWORD}}
+          script: |
+          cd /usr/share/nodeproject/node-js-ci-cd-github-actions
+          git pull
+          npm install
+          npm start
+  
+                
+
                 

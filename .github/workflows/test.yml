@@ -55,7 +55,7 @@ jobs:
       - name: Check out
         uses: actions/checkout@v2
         with:
-          ctpath: ${{ secrets.WORK_DIR }}/local_checkout
+          path: ${{ secrets.WORK_DIR }}/local_checkout
 
 
 

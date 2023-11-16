@@ -64,7 +64,7 @@ jobs:
         # run:  ssh-keyscan -p 7999  -T 100 -t rsa -4 localhost >> ~/.ssh/known_hosts
         # 
       - name: Deploy with rsync
-        run: rsync -avz ./src/ ${{ secrets.USERNAME }}@${{ secrets.HOST }}:/usr/share/nodeproject/node-js-ci-cd-github-actions/
+        run: rsync -avz . ${{ secrets.USERNAME }}@${{ secrets.HOST }}:/usr/share/nodeproject/node-js-ci-cd-github-actions/
   
                 
 

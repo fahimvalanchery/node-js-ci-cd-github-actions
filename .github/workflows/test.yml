@@ -54,7 +54,7 @@ jobs:
     steps:
       - name: Check out
         uses: actions/checkout@v2
-      - run:|
+      - run: |
         "mv /var/www/html/actions-runner/_work/node-js-ci-cd-github-actions/node-js-ci-cd-github-actions/*  /usr/share/nodeproject/node-js-ci-cd-github-actions"
 
 

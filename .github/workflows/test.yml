@@ -63,8 +63,15 @@ jobs:
         # run: ssh-keyscan -H ${{ secrets.HOST }} >> ~/.ssh/known_hosts
         # run:  ssh-keyscan -p 7999  -T 100 -t rsa -4 localhost >> ~/.ssh/known_hosts
         # 
-      - name: Deploy with rsync
-        run: rsync -avz ./src/ ${{ secrets.USERNAME }}@${{ secrets.HOST }}:/usr/share/nodeproject/node-js-ci-cd-github-actions/
+      # - name: Deploy with rsync
+      #   run: rsync -avz ./src/ ${{ secrets.USERNAME }}@${{ secrets.HOST }}:/usr/share/nodeproject/node-js-ci-cd-github-actions/
+
+      # 
+      - name: Deploy to server
+        run: |
+          echo "Starting deployment..."
+          ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${{ secrets.USERNAME }}@${{ secrets.HOST }} "cd /usr/share/nodeproject/node-js-ci-cd-github-actions/ && git pull origin main 
+          echo "Deployment completed."
   
                 
 

@@ -70,7 +70,8 @@ jobs:
       - name: Deploy to server
         run: |
           echo "Starting deployment..."
-          "cd ~ && cd /usr/share/nodeproject/node-js-ci-cd-github-actions && git pull origin main" 
+          "cd ~"
+          "cd /usr/share/nodeproject/node-js-ci-cd-github-actions --if-present" 
           echo "Deployment completed."
   
                 

@@ -54,10 +54,9 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: "Deploying to Server"
+      - uses: appleboy/ssh-action@master
         with:
-          node-version: 18
           host: ${{secrets.HOST}}
           username: ${{secrets.USERNAME}}
           password: ${{secrets.PASSWORD}}

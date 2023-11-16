@@ -60,8 +60,8 @@ jobs:
         run: "mkdir /usr/share/nodeproject/node-js-ci-cd-github-actions"
       - name: Move 
         run: "mv /var/www/html/actions-runner/_work/node-js-ci-cd-github-actions/node-js-ci-cd-github-actions/*  /usr/share/nodeproject/node-js-ci-cd-github-actions"
-      - name: ReMove 
-        run: "rm -rf /var/www/html/actions-runner/_work/node-js-ci-cd-github-actions/"
+      # - name: ReMove 
+      #   run: "rm -rf /var/www/html/actions-runner/_work/node-js-ci-cd-github-actions/"
       - name: Install 
         run: "npm install --prefix /usr/share/nodeproject/node-js-ci-cd-github-actions"
       - name: start 

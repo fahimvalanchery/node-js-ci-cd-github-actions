@@ -52,16 +52,30 @@ jobs:
     runs-on: [self-hosted, linux, ARM64]
 
     steps:
+      # - name: Check out
+      #   uses: actions/checkout@v2
+      # - name: Remove 
+      #   run: "rm -rf /usr/share/nodeproject/node-js-ci-cd-github-actions"
+      # - name: Make 
+      #   run: "mkdir /usr/share/nodeproject/node-js-ci-cd-github-actions"
+      # - name: Move 
+      #   run: "mv /var/www/html/actions-runner/_work/node-js-ci-cd-github-actions/node-js-ci-cd-github-actions/*  /usr/share/nodeproject/node-js-ci-cd-github-actions"
+      # - name: Install 
+      #   run: "cd /usr/share/nodeproject/node-js-ci-cd-github-actions && npm install && node src/"
+      # - name: Install 
+      #   run: "cd /usr/share/nodeproject/node-js-ci-cd-github-actions && npm install && node src/"
+      
+      - name: Check out To Project Directory
+        run: "cd /usr/share/nodeproject"
+      - name: Print PWD
+        run: "echo pwd"
+      - name: Remove 
+        run: "rm -rf node-js-ci-cd-github-actions"
       - name: Check out
         uses: actions/checkout@v2
-      - name: Remove 
-        run: "rm -rf /usr/share/nodeproject/node-js-ci-cd-github-actions"
-      - name: Make 
-        run: "mkdir /usr/share/nodeproject/node-js-ci-cd-github-actions"
-      - name: Move 
-        run: "mv /var/www/html/actions-runner/_work/node-js-ci-cd-github-actions/node-js-ci-cd-github-actions/*  /usr/share/nodeproject/node-js-ci-cd-github-actions"
-      - name: Install 
-        run: "cd /usr/share/nodeproject/node-js-ci-cd-github-actions && npm install && node src/"
+      - name: Print PWD
+        run: "echo pwd"
+        
  
 
 

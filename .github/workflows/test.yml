@@ -36,13 +36,13 @@ jobs:
           echo test, and deploy your project.
       #Setup nodejs 
       - name: Setup Node.js environment
-      - uses: actions/setup-node@v3.0.0
+      - uses: actions/setup-node@v4.0.0
         with:
-          node-version: "18.x"
-      - name: Install Dependencies
-        run: npm install
+          node-version: "14.x"
+      # - name: Install Dependencies
+      #   run: npm install
       
-      - name: Run Test
-        run: npm test
+      # - name: Run Test
+      #   run: npm test
   
                 

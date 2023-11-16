@@ -34,5 +34,15 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+
+          - name: Setup Node.js environment
+      - uses: actions/setup-node@v4.0.0
+        with:
+          node-version: "18.x"
+      - name: Install Dependencies
+        run: npm install
+      
+      - name: Run Test
+        run: npm test
   
                 

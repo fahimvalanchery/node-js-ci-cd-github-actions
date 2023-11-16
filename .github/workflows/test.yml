@@ -72,7 +72,9 @@ jobs:
       - name: Remove 
         run: "rm -rf node-js-ci-cd-github-actions"
       - name: Check out
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
+        with:
+          path: /usr/share/nodeproject
       - name: Print PWD
         run: "pwd"
         

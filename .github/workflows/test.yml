@@ -52,8 +52,10 @@ jobs:
     runs-on: [self-hosted, linux, ARM64]
 
     steps:
-      - uses: actions/checkout@v2
-        path: ${{ secrets.WORK_DIR }}/local_checkout
+      - name: Check out
+        uses: actions/checkout@v2
+        with:
+          ctpath: ${{ secrets.WORK_DIR }}/local_checkout
 
 
 

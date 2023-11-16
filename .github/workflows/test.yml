@@ -54,8 +54,8 @@ jobs:
     steps:
       - name: Check out
         uses: actions/checkout@v2
-      - run: |
-        "echo hello"
+        run: |
+            "echo hello"
 
 
 
